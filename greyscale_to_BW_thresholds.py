@@ -1,4 +1,4 @@
-# Thresholding RGB images to BW
+# Thresholding greyscale images to BW
 
 
 from PIL import Image, ImageFilter
@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
+# Transform greyscale image to BW using threshold between 0 and 255
 def binary_image_threshold(my_image, threshold):  # Threshold should be integer from 0 to 255
 
     if threshold < 0 or threshold > 255:
@@ -27,6 +28,7 @@ def binary_image_threshold(my_image, threshold):  # Threshold should be integer 
     output_image.show()
 
 
+# Transform greyscale image to BW using optimum thresholding determined by Otsu's Method
 def otsus_method(my_image):
 
     my_image_width, my_image_height = my_image.size
